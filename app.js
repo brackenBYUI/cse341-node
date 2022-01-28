@@ -4,6 +4,7 @@ const PORT = process.env.PORT || 3000;
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const cors = require('cors');
 
 const errorController = require('./controllers/error');
 const User = require('./models/user');
@@ -33,8 +34,16 @@ app.use(shopRoutes);
 
 app.use(errorController.get404);
 
+const corsOptions = {
+    origin: "https://bdcse341-prove.herokuapp.com/",
+    optionsSuccessStatus: 200
+};
+app.use(cors(corsOptions));
+
+const MONGODB_URL = process.env.MONGODB_URL || 'mongodb+srv://bdoney:T1tleist1993@cse341.tdtpc.mongodb.net/shop?retryWrites=true&w=majority';
+
 mongoose
-    .connect('mongodb+srv://bdoney:T1tleist1993@cse341.tdtpc.mongodb.net/shop?retryWrites=true&w=majority')
+    .connect(MONGODB_URL)
     .then(result => {
         User.findOne().then(user => {
             if (!user) {

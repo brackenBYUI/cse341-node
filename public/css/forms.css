@@ -26,3 +26,40 @@
 .form-control textarea.invalid {
   border-color: red;
 }
+
+.reset-password {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.reset-password a {
+  justify-self: end;
+  align-self:  center;
+  text-decoration: none;
+  color: #757575;
+}
+
+.reset-password a:hover {
+  color: #94B0DA;
+}
+
+.sign-up-button {
+  display: grid;
+}
+
+.already-have-account {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+.already-have-account a,
+.already-have-account p {
+  align-self: center;
+}
+
+.already-have-account a {
+  justify-self: end;
+  padding-right: 1rem;
+  text-decoration: none;
+    color: #00695c;
+}

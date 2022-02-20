@@ -38,8 +38,14 @@
                     id="confirmPassword" 
                     value="<%= oldInput.confirmPassword %>">
             </div>
-            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
-            <button class="btn" type="submit">Signup</button>
+            <div class="sign-up-button">
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                <button class="btn" type="submit">Signup</button>
+            </div>
+            <div class="already-have-account">
+                <p>Already have an account?</p>
+                <a href="/login">Login</a>
+            </div>
         </form>
     </main>
 <%- include('../includes/end.ejs') %>
